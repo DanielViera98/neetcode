@@ -34,9 +34,9 @@ return False
 
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-        seen = {}
+        seen = set()
         for num in nums:
-            if num in seen and seen[num] >= 1:
+            if num in seen:
                 return True
-            seen[num] = seen.get(num, 0) + 1
+            seen.add(num)
         return False
